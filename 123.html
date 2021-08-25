@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<body>
+
+
+  <script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
+  <script>
+      function pay() {
+          var widget = new cp.CloudPayments({language: "ru-RU"});
+
+          widget.charge(
+              {
+                  publicId:    'pk_d556573c26a4c29abcd522bd0c495',
+                  description: 'Payment: #15745138',
+                  amount:      +'1',
+                  currency:    'RUB',
+                accountId: 283804,
+                invoiceId:     '15745138'
+              },
+              'https://donatepay.ru/pay/cloudpayments/success?invoiceId=15745138',
+              'https://donatepay.ru/pay/cloudpayments/fail?invoiceId=15745138'
+          );
+      }
+
+      pay();
+  </script>
+</body>
+
+</html>
